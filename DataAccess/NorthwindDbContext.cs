@@ -10,7 +10,7 @@ namespace efCore.DataAccess
 {
     public class NorthwindDbContext:DbContext
     {
-        // public NorthwindDbContext(DbContextOptions<NorthwindDbContext>options):base(options) { }
+        
         public NorthwindDbContext()
         {
             
@@ -30,7 +30,7 @@ namespace efCore.DataAccess
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //Model siniflar(POCO) db'ye aktarılırken nasıl bir ilişki kurulucak?\
+          
             modelBuilder.Entity<Book>().Property(b=>b.BookName).IsRequired();
             modelBuilder.Entity<Book>().Property(b => b.Description).HasMaxLength(250);
 
